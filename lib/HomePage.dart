@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-//import 'package:intl/intl.dart';
+import 'package:intl/intl.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,9 +12,13 @@ class _HomePageState extends State<HomePage> {
   DateTime selectDate;
   // Widget bottomModalSheet;
 
-  Widget bottomModalSheet(String text, Widget child) {
-    return FlatButton(
-      child: Text(text),
+  Widget bottomModalSheet(IconData ii, Widget child) {
+    return IconButton(
+      icon: Icon(
+        ii,
+        color: Colors.black,
+      ),
+      // child: Text(text),
       onPressed: () {
         showModalBottomSheet<void>(
           context: context,
@@ -120,71 +126,88 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              Divider(
-                color: Colors.blue,
-                thickness: 2,
-                indent: 15,
-                endIndent: 15,
+              // Divider(
+              //   color: Colors.blue,
+              //   thickness: 2,
+              //   indent: 15,
+              //   endIndent: 15,
+              // ),
+              Container(
+                //height: 300,
+                child: Image.asset(
+                  'IMAGES/coding.gif',
+                  fit: BoxFit.fill,
+                ),
               ),
-              bottomModalSheet(
-                'Attendance',
-                Column(
-                  // crossAxisAlignment: CrossAxisAlignment.end,
-                  children: <Widget>[
-                    TextField(
-                      decoration: InputDecoration(labelText: 'Name'),
-                    ),
-                    TextField(
-                      decoration: InputDecoration(labelText: 'year'),
-                      keyboardType: TextInputType.number,
-                    ),
-                    FlatButton(
-                        onPressed: _presentate,
-                        textColor: Theme.of(context).primaryColor,
-                        child: Text(
-                          'Date ',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+              Spacer(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  bottomModalSheet(
+                    Icons.pan_tool,
+                    Column(
+                      // crossAxisAlignment: CrossAxisAlignment.end,
+                      children: <Widget>[
+                        TextField(
+                          decoration: InputDecoration(labelText: 'Name'),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(labelText: 'Year'),
+                          keyboardType: TextInputType.number,
+                        ),
+                        FlatButton(
+                            onPressed: _presentate,
+                            child: Text(
+                              'Date ',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )),
+                        FlatButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: Text(
+                            'Submit',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        )),
-                    FlatButton(
-                      onPressed: () => Navigator.pop(context),
-                      child: Text('Submit'),
-                      textColor: Colors.purple,
-                    )
-                  ],
-                ),
-              ),
-              bottomModalSheet(
-                'Queries',
-                Column(
-                  children: [
-                    TextField(
-                      decoration: InputDecoration(labelText: 'Query'),
+                        )
+                      ],
                     ),
-                    FlatButton(
-                      onPressed: () => Navigator.pop(context),
-                      child: Text('Submit'),
-                      textColor: Colors.purple,
-                    )
-                  ],
-                ),
-              ),
-              bottomModalSheet(
-                'Project Update',
-                Column(
-                  children: [
-                    TextField(
-                      decoration: InputDecoration(labelText: 'Project Update'),
+                  ),
+                  bottomModalSheet(
+                    MdiIcons.quora,
+                    Column(
+                      children: [
+                        TextField(
+                          decoration: InputDecoration(labelText: 'Query'),
+                        ),
+                        FlatButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: Text('Submit'),
+                          textColor: Colors.purple,
+                        )
+                      ],
                     ),
-                    FlatButton(
-                      onPressed: () => Navigator.pop(context),
-                      child: Text('Submit'),
-                      textColor: Colors.purple,
-                    )
-                  ],
-                ),
-              )
+                  ),
+                  bottomModalSheet(
+                    MdiIcons.update,
+                    Column(
+                      children: [
+                        TextField(
+                          decoration:
+                              InputDecoration(labelText: 'Project Update'),
+                        ),
+                        FlatButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: Text('Submit'),
+                          textColor: Colors.purple,
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ],
           ),
         ),

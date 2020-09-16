@@ -26,40 +26,7 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-// class MainPage extends StatefulWidget {
-//   @override
-//   _MainPageState createState() => _MainPageState();
-// }
-
-// class _MainPageState extends State<MainPage> {
-//   PageController p;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Colors.blue,
-//       body: PageView(
-//         controller: p,
-//         children: [
-//           Login(),
-//           SecondPage(),
-//         ],
-//       ),
-//       appBar: AppBar(
-//         actions: [
-//           IconButton(icon: Icon(Icons.arrow_back_ios), onPressed: () {}),
-//           Spacer(),
-//           IconButton(
-//             icon: Icon(Icons.search),
-//             onPressed: () {},
-//           ),
-//         ],
-//         elevation: 0,
-//       ),
-//     );
-//   }
-// }
-
+//
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -103,27 +70,25 @@ class MainPage extends StatelessWidget {
                           labelText: 'Password', icon: Icon(Icons.security)),
                     ),
                     SizedBox(
-                      height: 5,
+                      height: 10,
                     ),
-                    Row(
-                      children: [
-                        Checkbox(
-                          onChanged: (_) {},
-                          value: false,
-                        ),
-                        Text('Keep me Logged')
-                      ],
-                    ),
+
+                    // Row(
+                    //   children: [
+                    //      Checkbox(
+                    //        onChanged: (_) {},
+                    //        value: false,
+                    //      ),
+                    //     Text('Keep me Logged')
+                    //   ],
+                    // ),
                     Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [Colors.blue[300], Colors.blue[20]],
-                            begin: Alignment.center,
-                            //
-                          ),
+                          // gradient: RadialGradient(
+                          //     radius: 1, colors: [Colors.blue, Colors.white]),
                           //shape: BoxShape.circle,
-                          //color: Colorli,
+                          color: Colors.blue,
                           borderRadius: BorderRadius.circular(40)),
                       child: FlatButton(
                           onPressed: () {
@@ -135,6 +100,40 @@ class MainPage extends StatelessWidget {
                           },
                           child: Text('login')),
                     ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    RichText(
+                      text: TextSpan(
+                        text: 'Forgot Password ? ',
+                        style: TextStyle(color: Colors.black),
+                        children: <TextSpan>[
+                          TextSpan(
+                              text: 'Recover Pawword',
+                              style: TextStyle(
+                                  color: Colors.blue,
+                                  fontStyle: FontStyle.italic)),
+                        ],
+                      ),
+                    ),
+                    Spacer(),
+                    RichText(
+                      text: TextSpan(
+                        text: 'Do not have an Account ! ',
+                        style: TextStyle(color: Colors.black),
+                        children: <TextSpan>[
+                          TextSpan(
+                              text: 'Signup here',
+                              style: TextStyle(
+                                  color: Colors.blue,
+                                  fontStyle: FontStyle.italic)),
+                        ],
+                      ),
+                    ),
+                    // Divider(
+                    //   indent: 20,
+                    //   endIndent: 20,
+                    // )
                   ],
                 ),
               )),
