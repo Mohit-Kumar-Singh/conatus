@@ -59,8 +59,14 @@ flutter:
     - IMAGES/conatus.jpg
     - IMAGES/conatusDark.jpg
     - IMAGES/mypic.jpg
-    - IMAGES/welcome.gif
+    - IMAGES/manish.png
+    - IMAGES/chirag.jpg
+    - IMAGES/apraJain.jpg
+    - IMAGES/chetu.png
+    
     - IMAGES/coding.gif
+    - IMAGES/pen.gif
+    - IMAGES/search.gif
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

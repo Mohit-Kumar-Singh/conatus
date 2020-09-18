@@ -1,20 +1,23 @@
+import 'package:conatus/pages/signup.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'pagecontroller.dart';
-
-//  flutter pub run flutter_launcher_icons:main
+import 'pages/signup.dart';
+import 'widget.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  // bool checkBoxVal = true;
+  final Color o = Color.fromRGBO(255, 181, 101, 1);
+  final Color b = Color.fromRGBO(31, 16, 22, 1);
+
   @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  // bool c = false;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,122 +25,119 @@ class _MyAppState extends State<MyApp> {
       title: 'CONATUS',
       home: MainPage(),
       themeMode: ThemeMode.dark,
+      theme: ThemeData(
+        primarySwatch: Colors.brown,
+        //primaryColorDark: Colors.black,
+        primaryColor: b,
+        accentColor: o,
+      ),
     );
   }
 }
 
-//
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Positioned(
-            top: 00,
-            left: 00,
-            child: Image.asset(
-              'IMAGES/welcome.gif',
-              fit: BoxFit.fill,
-            ),
-          ),
-          Positioned(
-              bottom: 00,
-              left: 00,
+    final double height = MediaQuery.of(context).size.height;
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: o,
+        body: Stack(
+          children: [
+            Positioned(
+              top: 00,
+              right: 00,
               child: Container(
-                // margin: EdgeInsets.only(left: 4),
-                padding: EdgeInsets.all(25),
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * .7,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(80.0),
-                      topRight: Radius.circular(80.0)),
+                height: height * .35,
+                //width: double.infinity,
+                child: Image.asset(
+                  'IMAGES/pen.gif',
+                  fit: BoxFit.cover,
                 ),
-                child: Column(
-                  children: [
-                    CircleAvatar(
-                      radius: 50.0,
-                      backgroundImage: AssetImage('IMAGES/conatusDark.jpg'),
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                          labelText: 'E-mail', icon: Icon(Icons.email)),
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                          labelText: 'Password', icon: Icon(Icons.security)),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-
-                    // Row(
-                    //   children: [
-                    //      Checkbox(
-                    //        onChanged: (_) {},
-                    //        value: false,
-                    //      ),
-                    //     Text('Keep me Logged')
-                    //   ],
-                    // ),
-                    Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          // gradient: RadialGradient(
-                          //     radius: 1, colors: [Colors.blue, Colors.white]),
-                          //shape: BoxShape.circle,
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(40)),
-                      child: FlatButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => PageControler()),
-                            );
-                          },
-                          child: Text('login')),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    RichText(
-                      text: TextSpan(
-                        text: 'Forgot Password ? ',
-                        style: TextStyle(color: Colors.black),
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: 'Recover Pawword',
-                              style: TextStyle(
-                                  color: Colors.blue,
-                                  fontStyle: FontStyle.italic)),
-                        ],
+              ),
+            ),
+            Positioned(
+                bottom: 00,
+                left: 00,
+                child: roundContainer(
+                  context: context,
+                  lradius: 80,
+                  rradius: 80,
+                  rMargin: 0,
+                  lMargin: 0,
+                  child: Column(
+                    children: [
+                      circleAvatar(image: 'IMAGES/conatusDark.jpg', radius: 50),
+                      TextField(
+                        decoration: InputDecoration(
+                            labelText: 'E-mail', icon: Icon(Icons.email)),
                       ),
-                    ),
-                    Spacer(),
-                    RichText(
-                      text: TextSpan(
-                        text: 'Do not have an Account ! ',
-                        style: TextStyle(color: Colors.black),
-                        children: <TextSpan>[
-                          TextSpan(
+                      TextField(
+                        decoration: InputDecoration(
+                            labelText: 'Password', icon: Icon(Icons.security)),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      button(
+                        FlatButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => PageControler()),
+                              );
+                            },
+                            child: Text(
+                              'login',
+                            )),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      RichText(
+                        text: TextSpan(
+                          text: 'Forgot Password ? ',
+                          style: TextStyle(color: b),
+                          children: <TextSpan>[
+                            TextSpan(
+                                text: 'Recover Password',
+                                style: TextStyle(
+                                    color: b,
+                                    fontStyle: FontStyle.italic,
+                                    decoration: TextDecoration.underline)),
+                          ],
+                        ),
+                      ),
+                      Spacer(),
+                      RichText(
+                        text: TextSpan(
+                          text: 'Do not have an Account ! ',
+                          style: TextStyle(color: Colors.black),
+                          children: <TextSpan>[
+                            TextSpan(
                               text: 'Signup here',
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Signup()),
+                                  );
+                                },
                               style: TextStyle(
-                                  color: Colors.blue,
-                                  fontStyle: FontStyle.italic)),
-                        ],
+                                  color: b,
+                                  fontStyle: FontStyle.italic,
+                                  decoration: TextDecoration.underline),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    // Divider(
-                    //   indent: 20,
-                    //   endIndent: 20,
-                    // )
-                  ],
-                ),
-              )),
-        ],
+                    ],
+                  ),
+                )),
+          ],
+        ),
       ),
     );
   }
