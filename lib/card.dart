@@ -47,7 +47,7 @@ class Card1 extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
-                colors: [o.withOpacity(0.0), o],
+                colors: [o.withOpacity(1), o.withOpacity(0.0)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight),
             borderRadius: BorderRadius.all(Radius.circular(14))),

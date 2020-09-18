@@ -42,11 +42,11 @@ const Dummy_profile = const [
       bio: 'bio',
       skill: 'Machine Learning'),
   BioPage(
-      name: 'Manish Kumar ',
+      name: 'Manish Kumar',
       profiephoto: 'IMAGES/manish.png',
       instaurl: 'https://instagram.com/mannnish_?igshid=rkix9152lxkf',
       mail: 'manish1913165@akgec.ac.in',
-      linkedin: 'https://www.linkedin.com/in/chaitanya-singh-0b96691b4',
+      linkedin: 'https://www.linkedin.com/in/manish-kumar-21a8b4183/',
       phoneNo: 9958774243,
       bio: 'bio',
       skill: 'App developer'),
@@ -61,7 +61,7 @@ const Dummy_profile = const [
       bio: 'bio',
       skill: 'Web developer'),
   BioPage(
-      name: 'Mohit Kumar Singh ',
+      name: 'Mohit Kumar Singh',
       profiephoto: 'IMAGES/mypic.jpg',
       instaurl: 'https://instagram.com/mohit_kumar_singh?igshid=a7p8i0f07u98',
       mail: 'mks61201625@gmailcom',

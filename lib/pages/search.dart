@@ -1,6 +1,7 @@
 import 'package:conatus/card.dart';
 import 'package:conatus/widget.dart';
 import 'package:flutter/material.dart';
+import 'package:colorful_safe_area/colorful_safe_area.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widget.dart';
 import '../data.dart';
@@ -14,10 +15,12 @@ class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: o,
-        body: Container(
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: o,
+      body: ColorfulSafeArea(
+        color: o,
+        child: Container(
           child: Stack(
             children: [
               Positioned(
@@ -40,7 +43,7 @@ class _SearchState extends State<Search> {
                         style: GoogleFonts.adamina(color: b, fontSize: 30.0)),
                   )),
               Positioned(
-                  bottom: 00,
+                  bottom: 0,
                   left: 0,
                   right: 0,
                   child: Row(
@@ -74,7 +77,8 @@ class _SearchState extends State<Search> {
                                 height: 5,
                               ),
                               Container(
-                                height: MediaQuery.of(context).size.height * .5,
+                                height:
+                                    MediaQuery.of(context).size.height * .53,
                                 //color: Colors.cyan,
                                 child: ListView.builder(
                                   itemBuilder: (context, index) {

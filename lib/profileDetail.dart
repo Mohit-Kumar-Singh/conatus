@@ -28,7 +28,15 @@ class Profiledetails extends StatelessWidget {
     @required this.skill,
   });
 
-  void _launchUrl(String url) async {
+  void _launchUrlLin(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  void _launchUrlinsta(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -46,7 +54,7 @@ class Profiledetails extends StatelessWidget {
   }
 
   void _launchEmail(String email) async {
-    var url = 'mailto:$email?subject= resume';
+    var url = 'mailto:$email?subject= Conatus';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -97,12 +105,20 @@ class Profiledetails extends StatelessWidget {
           indent: 15,
           endIndent: 15,
         ),
-        Text(
-          bio,
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 16),
+        SingleChildScrollView(
+          child: Text(
+            bio,
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16),
+          ),
         ),
         Spacer(),
+        Divider(
+          color: Theme.of(context).accentColor,
+          thickness: 2,
+          indent: 10,
+          endIndent: 10,
+        ),
         Container(
           alignment: Alignment.center,
           width: double.infinity,
@@ -115,7 +131,7 @@ class Profiledetails extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(
-                onPressed: () => _launchUrl(instaurl),
+                onPressed: () => _launchUrlinsta(instaurl),
                 icon: Icon(
                   MdiIcons.instagram,
                 )),
@@ -126,7 +142,7 @@ class Profiledetails extends StatelessWidget {
               ),
             ),
             IconButton(
-                onPressed: () => _launchUrl(linkedin),
+                onPressed: () => _launchUrlLin(linkedin),
                 icon: Icon(
                   MdiIcons.linkedin,
                 )),
