@@ -41,7 +41,7 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "IMAGES/conatusDark.jpg"  
+  image_path: "IMAGES/cRound.png"  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -63,7 +63,7 @@ flutter:
     - IMAGES/chirag.jpg
     - IMAGES/apraJain.jpg
     - IMAGES/chetu.png
-    
+    - IMAGES/cRound.png
     - IMAGES/coding.gif
     - IMAGES/pen.gif
     - IMAGES/search.gif
