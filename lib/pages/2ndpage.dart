@@ -6,12 +6,8 @@ import '../widget.dart';
 import 'package:conatus/data.dart';
 
 class SecondPage extends StatelessWidget {
-  final Color o = Color.fromRGBO(255, 181, 101, 1);
-  final Color b = Color.fromRGBO(31, 16, 22, 1);
-
   @override
   Widget build(BuildContext context) {
-    //var height = MediaQuery.of(context).size.height;
     return Stack(children: [
       Positioned(
         left: 00,

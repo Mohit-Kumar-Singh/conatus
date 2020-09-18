@@ -27,7 +27,6 @@ class _MyAppState extends State<MyApp> {
       themeMode: ThemeMode.dark,
       theme: ThemeData(
         primarySwatch: Colors.brown,
-        //primaryColorDark: Colors.black,
         primaryColor: b,
         accentColor: o,
       ),
@@ -49,7 +48,6 @@ class MainPage extends StatelessWidget {
               right: 00,
               child: Container(
                 height: height * .35,
-                //width: double.infinity,
                 child: Image.asset(
                   'IMAGES/pen.gif',
                   fit: BoxFit.cover,
@@ -90,6 +88,10 @@ class MainPage extends StatelessWidget {
                             },
                             child: Text(
                               'login',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  color: b,
+                                  fontWeight: FontWeight.bold),
                             )),
                       ),
                       SizedBox(

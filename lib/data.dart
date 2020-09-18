@@ -1,18 +1,5 @@
 import 'package:flutter/material.dart';
 
-class BioSearch {
-  final String name;
-  final String skill;
-  final String photo;
-
-  const BioSearch(
-      {@required this.name, @required this.skill, @required this.photo});
-}
-
-const Dummy_profile_search = const [
-  BioSearch(name: 'ApraJain', skill: 'App Dev.', photo: 'IMAGES/apra.jpg')
-];
-
 class BioPage {
   final String name;
   final String profiephoto;
@@ -53,7 +40,7 @@ const Dummy_profile = const [
       linkedin: 'https://www.linkedin.com/in/chaitanya-singh-0b96691b4',
       phoneNo: 7060633533,
       bio: 'bio',
-      skill: 'Machine Lerning'),
+      skill: 'Machine Learning'),
   BioPage(
       name: 'Manish Kumar ',
       profiephoto: 'IMAGES/manish.png',
@@ -81,6 +68,6 @@ const Dummy_profile = const [
       linkedin: 'https://www.linkedin.com/in/mohit-kumar-singh-mks',
       phoneNo: 6398356528,
       bio:
-          'Responsible and ambitious student with excellent time management. Aiming to use knowledge and resources to combine technology with Creativity / Art . Possess proper Communication skills and strong work ethics that will aid our team in meeting its future  milestones.',
+          'Responsible and ambitious student with excellent time management. Aiming to use knowledge and resources to combine technology with creativity / art . Possess proper communication skills and strong work ethics that will aid our team in meeting its future  milestones.',
       skill: 'App developer'),
 ];

@@ -27,69 +27,58 @@ class Card1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => () {
-        print('ss');
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => ProfilePage(
+                    name: name,
+                    skill: skill,
+                    phoneNo: phoneNo,
+                    profiephoto: profiephoto,
+                    mail: mail,
+                    linkedin: linkedin,
+                    instaurl: instaurl,
+                    bio: bio,
+                  )),
+        );
       },
-      splashColor: Colors.black,
-      borderRadius: BorderRadius.all(Radius.circular(8)),
-      child: GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => ProfilePage(
-                      name: name,
-                      skill: skill,
-                      phoneNo: phoneNo,
-                      profiephoto: profiephoto,
-                      mail: mail,
-                      linkedin: linkedin,
-                      instaurl: instaurl,
-                      bio: bio,
-                    )),
-          );
-        },
-        child: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  colors: [o.withOpacity(0.0), o],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight),
-              borderRadius: BorderRadius.all(Radius.circular(14))),
-          margin: EdgeInsets.fromLTRB(0, 4, 0, 4),
-          // padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
-          height: 70,
-          width: double.infinity,
-          child: Row(
-            children: [
-              circleAvatar(
-                radius: 21,
-                image: profiephoto,
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    name,
-                    style: GoogleFonts.adamina(
-                      color: b,
-                    ),
+      child: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [o.withOpacity(0.0), o],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight),
+            borderRadius: BorderRadius.all(Radius.circular(14))),
+        margin: EdgeInsets.fromLTRB(0, 4, 0, 4),
+        height: 70,
+        width: double.infinity,
+        child: Row(
+          children: [
+            circleAvatar(
+              radius: 21,
+              image: profiephoto,
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  name,
+                  style: GoogleFonts.adamina(
+                    color: b,
                   ),
-                  Text(
-                    skill,
-                    // style: GoogleFonts.montserratAlternates(
-                    // color: b,
-                    // )
-                  )
-                ],
-              ),
-            ],
-          ),
+                ),
+                Text(
+                  skill,
+                )
+              ],
+            ),
+          ],
         ),
       ),
     );

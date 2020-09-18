@@ -1,4 +1,3 @@
-//import 'package:conatus/widget.dart';
 import 'package:flutter/material.dart';
 import 'pages/HomePage.dart';
 import 'pages/2ndpage.dart';
@@ -10,14 +9,13 @@ class PageControler extends StatefulWidget {
 }
 
 class _PageControlerState extends State<PageControler> {
-  final Color o = Color.fromRGBO(255, 181, 101, 1);
-  final Color b = Color.fromRGBO(31, 16, 22, 1);
   PageController p;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: o,
+      resizeToAvoidBottomInset: false,
+      backgroundColor: Theme.of(context).accentColor,
       body: PageView(
         controller: p,
         children: [
@@ -26,20 +24,16 @@ class _PageControlerState extends State<PageControler> {
         ],
       ),
       appBar: AppBar(
-        iconTheme: IconThemeData(color: b),
-        backgroundColor: o,
+        iconTheme: IconThemeData(
+          color: Theme.of(context).primaryColor,
+        ),
+        backgroundColor: Theme.of(context).accentColor,
         actions: [
-          // IconButton(
-          //     icon: Icon(
-          //       Icons.ex,
-          //       color: b,
-          //     ),
-          //     onPressed: () {}),
           Spacer(),
           IconButton(
             icon: Icon(
               Icons.search,
-              color: b,
+              color: Theme.of(context).primaryColor,
             ),
             onPressed: () {
               Navigator.push(

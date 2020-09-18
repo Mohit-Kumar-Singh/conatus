@@ -18,13 +18,6 @@ class _SearchState extends State<Search> {
       child: Scaffold(
         backgroundColor: o,
         body: Container(
-          // decoration: BoxDecoration(
-          //   gradient: LinearGradient(
-          //       colors: [o.withOpacity(0.75), o],
-          //       begin: Alignment.topLeft,
-          //       end: Alignment.bottomRight),
-          //   // borderRadius: BorderRadius.all(Radius.circular(8))
-          // ),
           child: Stack(
             children: [
               Positioned(

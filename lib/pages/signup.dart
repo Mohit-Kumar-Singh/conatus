@@ -3,8 +3,6 @@ import '../pagecontroller.dart';
 import '../widget.dart';
 
 class Signup extends StatelessWidget {
-  final Color o = Color.fromRGBO(255, 181, 101, 1);
-  final Color b = Color.fromRGBO(31, 16, 22, 1);
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -17,7 +15,6 @@ class Signup extends StatelessWidget {
               right: 00,
               child: Container(
                 height: MediaQuery.of(context).size.height * .35,
-                //width: double.infinity,
                 child: Image.asset(
                   'IMAGES/pen.gif',
                   fit: BoxFit.cover,
@@ -29,9 +26,9 @@ class Signup extends StatelessWidget {
                 left: 00,
                 child: roundContainer(
                   context: context,
-                  lradius: 0,
-                  rradius: 0,
-                  rMargin: 5,
+                  lradius: 80,
+                  rradius: 80,
+                  rMargin: 0,
                   lMargin: 0,
                   child: Column(
                     children: [
@@ -52,15 +49,6 @@ class Signup extends StatelessWidget {
                       SizedBox(
                         height: 20,
                       ),
-
-                      //   children: [
-                      //      Checkbox(
-                      //        onChanged: (_) {},
-                      //        value: false,
-                      //      ),
-                      //     Text('Keep me Logged')
-                      //   ],
-                      // ),
                       button(
                         FlatButton(
                             onPressed: () {
@@ -72,54 +60,12 @@ class Signup extends StatelessWidget {
                             },
                             child: Text(
                               'Signup',
-                              // style: TextStyle(color: Colors.white),
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  color: b,
+                                  fontWeight: FontWeight.bold),
                             )),
                       ),
-                      // SizedBox(
-                      //   height: 5,
-                      // ),
-                      // RichText(
-                      //   text: TextSpan(
-                      //     text: 'Forgot Password ? ',
-                      //     style: TextStyle(color: Colors.black),
-                      //     children: <TextSpan>[
-                      //       TextSpan(
-                      //           text: 'Recover Password',
-                      //           style: TextStyle(
-                      //               color: b,
-                      //               fontStyle: FontStyle.italic,
-                      //               decoration: TextDecoration.underline)),
-                      //     ],
-                      //   ),
-                      // ),
-                      // Spacer(),
-                      // RichText(
-                      //   text: TextSpan(
-                      //     text: 'Do not have an Account ! ',
-                      //     style: TextStyle(color: Colors.black),
-                      //     children: <TextSpan>[
-                      //       TextSpan(
-                      //         text: 'Signup here',
-                      //         recognizer: TapGestureRecognizer()
-                      //           ..onTap = () {
-                      //             Navigator.push(
-                      //               context,
-                      //               MaterialPageRoute(
-                      //                   builder: (context) => PageControler()),
-                      //             );
-                      //           },
-                      //         style: TextStyle(
-                      //             color: b,
-                      //             fontStyle: FontStyle.italic,
-                      //             decoration: TextDecoration.underline),
-                      //       ),
-                      //     ],
-                      //   ),
-                      // ),
-                      // // Divider(
-                      // //   indent: 20,
-                      // //   endIndent: 20,
-                      // // )
                     ],
                   ),
                 )),
