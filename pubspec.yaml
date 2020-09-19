@@ -67,6 +67,10 @@ flutter:
     - IMAGES/coding.gif
     - IMAGES/pen.gif
     - IMAGES/search.gif
+    - IMAGES/rishabh.png
+    - IMAGES/A.png
+
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

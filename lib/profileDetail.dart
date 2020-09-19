@@ -78,10 +78,7 @@ class Profiledetails extends StatelessWidget {
                       name,
                       style: GoogleFonts.adamina(color: b, fontSize: 18),
                     ),
-                    Text(skill, style: GoogleFonts.montserratAlternates()
-                        // color: b, fontSize: 18
-
-                        )
+                    Text(skill, style: GoogleFonts.montserratAlternates()),
                   ],
                 ),
               ),
@@ -97,6 +94,7 @@ class Profiledetails extends StatelessWidget {
                 name,
                 style: GoogleFonts.adamina(color: b, fontSize: 20),
               ),
+              Text(skill, style: GoogleFonts.montserratAlternates()),
             ],
           ),
         Divider(

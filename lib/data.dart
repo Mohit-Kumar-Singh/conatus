@@ -70,4 +70,22 @@ const Dummy_profile = const [
       bio:
           'Responsible and ambitious student with excellent time management. Aiming to use knowledge and resources to combine technology with creativity / art . Possess proper communication skills and strong work ethics that will aid our team in meeting its future  milestones.',
       skill: 'App developer'),
+  BioPage(
+      name: 'Avni Mittal',
+      profiephoto: 'IMAGES/A.png',
+      instaurl: "null",
+      mail: 'null',
+      linkedin: 'null',
+      phoneNo: 1,
+      bio: 'bio',
+      skill: 'App developer'),
+  BioPage(
+      name: 'Rishabh Singh',
+      profiephoto: 'IMAGES/rishabh.png',
+      instaurl: "null",
+      mail: 'null',
+      linkedin: 'null',
+      phoneNo: 1,
+      bio: 'bio',
+      skill: 'Machine Leraning'),
 ];
