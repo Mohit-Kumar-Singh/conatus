@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'pages/HomePage.dart';
 import 'pages/2ndpage.dart';
 import 'pages/search.dart';
-import 'animatedContainer.dart';
 
 class PageControler extends StatefulWidget {
   @override
